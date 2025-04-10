@@ -1,4 +1,4 @@
-# 📊 c-numerical-methods
+# 📊 test-web-frameworks
 
 > Repository for storing and versioning **test web development apps** developed in JavaScript using different frameworks for the **Web Development** subject at **Faculty of Engineering of Sorocaba (FACENS)**.
 
