@@ -150,6 +150,13 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  margin: 0;
+  padding: 0;
+}
+
 .notepad-app {
   max-width: 1000px;
   margin: 0 auto;
@@ -159,50 +166,57 @@ export default {
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #cba6f7;
   margin-bottom: 30px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .add-note {
-  background-color: #f5f5f5;
+  background-color: #313244;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .note-title-input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #585b70;
   border-radius: 4px;
   font-size: 16px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
 }
 
 .note-content-input {
   width: 100%;
-  min-height: 100px;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
+  min-height: 120px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #585b70;
   border-radius: 4px;
   font-size: 16px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
   resize: vertical;
 }
 
 .add-button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #a6e3a1;
+  color: #11111b;
   border: none;
-  padding: 10px 15px;
+  padding: 12px 20px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .add-button:hover {
-  background-color: #45a049;
+  background-color: #94e2d5;
 }
 
 .notes-container {
@@ -211,10 +225,11 @@ h1 {
 
 .no-notes {
   text-align: center;
-  color: #888;
-  padding: 20px;
-  background-color: #f8f8f8;
+  color: #bac2de;
+  padding: 30px;
+  background-color: #313244;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .note-list {
@@ -224,65 +239,67 @@ h1 {
 }
 
 .note-item {
-  background-color: #fff;
+  background-color: #313244;
   border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
-  border-left: 4px solid #3498db;
+  border-left: 4px solid #89b4fa;
 }
 
 .note-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 .note-item.selected {
-  border-left: 4px solid #e74c3c;
-  background-color: #f9f9f9;
+  border-left: 4px solid #f38ba8;
+  background-color: #45475a;
 }
 
 .note-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #45475a;
+  padding-bottom: 12px;
 }
 
 .note-header h2 {
   margin: 0;
   font-size: 18px;
+  color: #cba6f7;
   word-break: break-word;
 }
 
 .note-actions {
   display: flex;
-  gap: 5px;
+  gap: 8px;
 }
 
 .edit-button, .delete-button {
-  background-color: transparent;
-  border: 1px solid #ddd;
+  background-color: #45475a;
+  border: none;
   border-radius: 4px;
-  padding: 5px 10px;
+  padding: 6px 12px;
   cursor: pointer;
   font-size: 12px;
   transition: background-color 0.2s;
+  color: #cdd6f4;
 }
 
 .edit-button:hover {
-  background-color: #f0f0f0;
+  background-color: #585b70;
 }
 
 .delete-button {
-  color: #e74c3c;
+  color: #f38ba8;
 }
 
 .delete-button:hover {
-  background-color: #fdedec;
+  background-color: #45475a;
 }
 
 .note-content {
@@ -291,11 +308,12 @@ h1 {
   white-space: pre-wrap;
   max-height: 200px;
   overflow-y: auto;
+  color: #cdd6f4;
 }
 
 .note-date {
   font-size: 12px;
-  color: #888;
+  color: #a6adc8;
   text-align: right;
 }
 
@@ -306,7 +324,7 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(17, 17, 27, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -314,36 +332,70 @@ h1 {
 }
 
 .modal-content {
-  background-color: white;
-  padding: 20px;
+  background-color: #313244;
+  padding: 25px;
   border-radius: 8px;
   width: 80%;
   max-width: 600px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+  color: #cba6f7;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .modal-actions {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
-  gap: 10px;
+  gap: 12px;
 }
 
 .save-button, .cancel-button {
-  padding: 8px 15px;
+  padding: 10px 18px;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .save-button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #a6e3a1;
+  color: #11111b;
   border: none;
 }
 
+.save-button:hover {
+  background-color: #94e2d5;
+}
+
 .cancel-button {
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
+  background-color: #45475a;
+  border: none;
+  color: #cdd6f4;
+}
+
+.cancel-button:hover {
+  background-color: #585b70;
+}
+
+/* Configurações para scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #45475a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #585b70;
 }
 
 /* Responsividade */
@@ -354,6 +406,13 @@ h1 {
   
   .modal-content {
     width: 95%;
+    padding: 15px;
   }
+}
+
+/* Estilo para os placeholders */
+::placeholder {
+  color: #7f849c;
+  opacity: 1;
 }
 </style>
